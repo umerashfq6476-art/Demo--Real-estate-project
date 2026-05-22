@@ -371,48 +371,133 @@ document.addEventListener('DOMContentLoaded', () => {
             sorted.forEach((c) => listingsContainer.appendChild(c));
         };
 
+        let currentPage = 1;
+        const PAGE_SIZE = 6;
+        const paginationNav = document.querySelector('.pagination');
+
+        const renderPagination = (totalPages) => {
+            if (!paginationNav) return;
+            paginationNav.innerHTML = '';
+            if (totalPages <= 1) {
+                paginationNav.style.display = 'none';
+                return;
+            }
+            paginationNav.style.display = '';
+
+            const mkBtn = (label, opts) => {
+                const b = document.createElement('button');
+                b.className = 'page-btn';
+                if (opts.active) b.classList.add('active');
+                if (opts.disabled) b.disabled = true;
+                b.type = 'button';
+                if (opts.aria) b.setAttribute('aria-label', opts.aria);
+                b.innerHTML = label;
+                if (opts.onClick && !opts.disabled) b.addEventListener('click', opts.onClick);
+                return b;
+            };
+
+            paginationNav.appendChild(mkBtn('&lsaquo;', {
+                aria: 'Previous page',
+                disabled: currentPage === 1,
+                onClick: () => goToPage(currentPage - 1)
+            }));
+
+            for (let i = 1; i <= totalPages; i++) {
+                paginationNav.appendChild(mkBtn(String(i), {
+                    active: i === currentPage,
+                    onClick: () => goToPage(i)
+                }));
+            }
+
+            paginationNav.appendChild(mkBtn('&rsaquo;', {
+                aria: 'Next page',
+                disabled: currentPage === totalPages,
+                onClick: () => goToPage(currentPage + 1)
+            }));
+        };
+
+        const goToPage = (p) => {
+            currentPage = p;
+            applyFilters();
+            listingsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
         const applyFilters = () => {
             sortCards();
-            let visible = 0;
+            const matching = [];
             cards.forEach((card) => {
                 if (matchesFilters(card)) {
-                    card.style.display = '';
-                    visible += 1;
+                    matching.push(card);
                 } else {
                     card.style.display = 'none';
                 }
             });
-            if (resultsNum) resultsNum.textContent = visible;
-            if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+
+            const totalPages = Math.max(1, Math.ceil(matching.length / PAGE_SIZE));
+            if (currentPage > totalPages) currentPage = totalPages;
+            const startIdx = (currentPage - 1) * PAGE_SIZE;
+            const endIdx = startIdx + PAGE_SIZE;
+
+            matching.forEach((card, idx) => {
+                if (idx >= startIdx && idx < endIdx) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (resultsNum) resultsNum.textContent = matching.length;
+            if (noResults) noResults.style.display = matching.length === 0 ? 'block' : 'none';
+
+            renderPagination(totalPages);
+
+            if (loadMoreBtn) {
+                if (currentPage >= totalPages) {
+                    loadMoreBtn.disabled = true;
+                    loadMoreBtn.textContent = matching.length === 0 ? 'No Properties to Load' : 'All Properties Loaded';
+                    loadMoreBtn.style.opacity = '0.55';
+                    loadMoreBtn.style.cursor = 'not-allowed';
+                } else {
+                    loadMoreBtn.disabled = false;
+                    loadMoreBtn.textContent = 'Load More Properties';
+                    loadMoreBtn.style.opacity = '';
+                    loadMoreBtn.style.cursor = '';
+                }
+            }
+        };
+
+        const applyFiltersReset = () => {
+            currentPage = 1;
+            applyFilters();
         };
 
         [purposeSelect, citySelect, typeSelect, priceSelect, bedroomsSelect, areaSelect, sortSelect, agentSelect].forEach((el) => {
-            if (el) el.addEventListener('change', applyFilters);
+            if (el) el.addEventListener('change', applyFiltersReset);
         });
-        featureBoxes.forEach((c) => c.addEventListener('change', applyFilters));
+        featureBoxes.forEach((c) => c.addEventListener('change', applyFiltersReset));
 
         if (searchInput) {
-            searchInput.addEventListener('input', applyFilters);
+            searchInput.addEventListener('input', applyFiltersReset);
             searchInput.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') {
                     e.preventDefault();
-                    applyFilters();
+                    applyFiltersReset();
                 }
             });
         }
-        if (searchBtn) searchBtn.addEventListener('click', applyFilters);
+        if (searchBtn) searchBtn.addEventListener('click', applyFiltersReset);
 
         if (priceSlider && priceSliderValue) {
             priceSlider.addEventListener('input', () => {
                 priceSliderValue.textContent = formatPriceSlider(parseFloat(priceSlider.value));
-                applyFilters();
+                applyFiltersReset();
             });
             priceSliderValue.textContent = formatPriceSlider(parseFloat(priceSlider.value));
         }
         if (areaSlider && areaSliderValue) {
             areaSlider.addEventListener('input', () => {
                 areaSliderValue.textContent = formatAreaSlider(parseFloat(areaSlider.value));
-                applyFilters();
+                applyFiltersReset();
             });
             areaSliderValue.textContent = formatAreaSlider(parseFloat(areaSlider.value));
         }
@@ -432,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (areaSliderValue) areaSliderValue.textContent = formatAreaSlider(parseFloat(areaSlider.value));
             }
             featureBoxes.forEach((c) => { c.checked = false; });
-            applyFilters();
+            applyFiltersReset();
         };
 
         if (resetBtn) resetBtn.addEventListener('click', resetAllFilters);
@@ -445,22 +530,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (loadMoreBtn) {
             loadMoreBtn.addEventListener('click', () => {
-                loadMoreBtn.disabled = true;
-                loadMoreBtn.textContent = 'All Properties Loaded';
-                loadMoreBtn.style.opacity = '0.55';
-                loadMoreBtn.style.cursor = 'not-allowed';
+                if (loadMoreBtn.disabled) return;
+                goToPage(currentPage + 1);
             });
         }
 
-        pageBtns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                if (/^\d+$/.test(btn.textContent.trim())) {
-                    pageBtns.forEach((b) => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    listingsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+        applyFilters();
 
         if (mapToggle) {
             mapToggle.addEventListener('click', () => {
