@@ -20,16 +20,96 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.scroll-reveal').forEach((el) => el.classList.add('scroll-reveal--in'));
     }
 
+    const PROPERTIES = {
+        'NF-2024-001': { title: 'Executive Villa with Pool', meta: 'House &middot; F-7, Islamabad', location: 'F-7/2, Islamabad', price: 'PKR 8.5 Crore', priceFull: 'PKR 8,50,00,000', type: 'House', purpose: 'For Sale', beds: 4, baths: 3, areaNum: '500', areaLabel: 'sq yd', areaFull: '500 sq yd', image: 'photo-1600596542815-ffad4c1539a9', badge: 'For Sale', badgeClass: 'badge-sale' },
+        'NF-2024-002': { title: 'Modern Apartment Residence', meta: 'Apartment &middot; DHA, Lahore', location: 'DHA, Lahore', price: 'PKR 1.8 Crore', priceFull: 'PKR 1,80,00,000', type: 'Apartment', purpose: 'For Sale', beds: 3, baths: 2, areaNum: '2,200', areaLabel: 'Sqft', areaFull: '2,200 sqft', image: 'photo-1522708323590-d24dbb6b0267', badge: 'For Sale', badgeClass: 'badge-sale' },
+        'NF-2024-003': { title: 'Corporate Plaza Tower', meta: 'Plaza &middot; Blue Area, Islamabad', location: 'Blue Area, Islamabad', price: 'PKR 12 Crore', priceFull: 'PKR 12,00,00,000', type: 'Plaza', purpose: 'Commercial', beds: '—', baths: '—', areaNum: '15,000', areaLabel: 'Sqft', areaFull: '15,000 sqft', image: 'photo-1486325212027-8081e485255e', badge: 'Commercial', badgeClass: 'badge-commercial' },
+        'NF-2024-004': { title: 'Luxury Penthouse Suite', meta: 'Penthouse &middot; Gulberg, Lahore', location: 'Gulberg, Lahore', price: 'PKR 85,000/month', priceFull: 'PKR 85,000/month', type: 'Penthouse', purpose: 'For Rent', beds: 3, baths: 3, areaNum: '3,500', areaLabel: 'Sqft', areaFull: '3,500 sqft', image: 'photo-1512917774080-9991f1c4c750', badge: 'For Rent', badgeClass: 'badge-rent' },
+        'NF-2024-005': { title: 'Residential Corner Plot', meta: 'Plot &middot; Bahria Town, Islamabad', location: 'Bahria Town, Islamabad', price: 'PKR 3.2 Crore', priceFull: 'PKR 3,20,00,000', type: 'Plot', purpose: 'For Sale', beds: '—', baths: '—', areaNum: '10', areaLabel: 'Marla', areaFull: '10 Marla', image: 'photo-1500382017468-9049fed747ef', badge: 'For Sale', badgeClass: 'badge-sale' },
+        'NF-2024-006': { title: 'Spacious Family Estate', meta: 'House &middot; G-13, Islamabad', location: 'G-13, Islamabad', price: 'PKR 4.5 Crore', priceFull: 'PKR 4,50,00,000', type: 'House', purpose: 'For Sale', beds: 5, baths: 4, areaNum: '1', areaLabel: 'Kanal', areaFull: '1 Kanal', image: 'photo-1568605114967-8130f3a36994', badge: 'For Sale', badgeClass: 'badge-sale' },
+        'NF-2024-007': { title: 'Designer Villa with Pool', meta: 'Villa &middot; DHA Phase 5, Lahore', location: 'DHA Phase 5, Lahore', price: 'PKR 6.5 Crore', priceFull: 'PKR 6,50,00,000', type: 'Villa', purpose: 'For Sale', beds: 5, baths: 5, areaNum: '1', areaLabel: 'Kanal', areaFull: '1 Kanal', image: 'photo-1613490493576-7fde63acd811', badge: 'For Sale', badgeClass: 'badge-sale' },
+        'NF-2024-008': { title: 'Smart Studio Apartment', meta: 'Apartment &middot; F-11, Islamabad', location: 'F-11, Islamabad', price: 'PKR 65 Lac', priceFull: 'PKR 65,00,000', type: 'Apartment', purpose: 'For Sale', beds: 1, baths: 1, areaNum: '650', areaLabel: 'Sqft', areaFull: '650 sqft', image: 'photo-1502672260266-1c1ef2d93688', badge: 'For Sale', badgeClass: 'badge-sale' },
+        'NF-2024-009': { title: 'Premium Office Floor', meta: 'Office &middot; I-9, Islamabad', location: 'I-9, Islamabad', price: 'PKR 2.8 Crore', priceFull: 'PKR 2,80,00,000', type: 'Office', purpose: 'Commercial', beds: '—', baths: '—', areaNum: '8,000', areaLabel: 'Sqft', areaFull: '8,000 sqft', image: 'photo-1497366216548-37526070297c', badge: 'Commercial', badgeClass: 'badge-commercial' },
+        'NF-2024-010': { title: 'Luxury Mansion', meta: 'Villa &middot; DHA Phase 6, Lahore', location: 'DHA Phase 6, Lahore', price: 'PKR 18 Crore', priceFull: 'PKR 18,00,00,000', type: 'Villa', purpose: 'For Sale', beds: 7, baths: 8, areaNum: '2', areaLabel: 'Kanal', areaFull: '2 Kanal', image: 'photo-1564013799919-ab600027ffc6', badge: 'For Sale', badgeClass: 'badge-sale' },
+        'NF-2024-011': { title: 'Cozy Furnished Apartment', meta: 'Apartment &middot; Gulberg III, Lahore', location: 'Gulberg III, Lahore', price: 'PKR 1.25 Lac/month', priceFull: 'PKR 1,25,000/month', type: 'Apartment', purpose: 'For Rent', beds: 2, baths: 2, areaNum: '1,100', areaLabel: 'Sqft', areaFull: '1,100 sqft', image: 'photo-1493809842364-78817add7ffb', badge: 'For Rent', badgeClass: 'badge-rent' },
+        'NF-2024-012': { title: '5 Marla Residential Plot', meta: 'Plot &middot; Bahria Town, Rawalpindi', location: 'Bahria Town, Rawalpindi', price: 'PKR 95 Lac', priceFull: 'PKR 95,00,000', type: 'Plot', purpose: 'For Sale', beds: '—', baths: '—', areaNum: '5', areaLabel: 'Marla', areaFull: '5 Marla', image: 'photo-1605276374104-dee2a0ed3cd6', badge: 'For Sale', badgeClass: 'badge-sale' }
+    };
+
+    const TITLE_TO_ID = {};
+    Object.entries(PROPERTIES).forEach(([id, p]) => { TITLE_TO_ID[p.title] = id; });
+
     document.querySelectorAll('.property-card').forEach((card, idx) => {
-        if (card.querySelector('.property-ref-badge')) return;
-        const ref = `NF-2024-${String(idx + 1).padStart(3, '0')}`;
+        const titleEl = card.querySelector('.property-title');
+        const title = titleEl ? titleEl.textContent.trim() : '';
+        const id = TITLE_TO_ID[title] || `NF-2024-${String(idx + 1).padStart(3, '0')}`;
+
         const imgWrap = card.querySelector('.property-image');
-        if (!imgWrap) return;
-        const badge = document.createElement('span');
-        badge.className = 'property-ref-badge';
-        badge.textContent = ref;
-        imgWrap.appendChild(badge);
+        if (imgWrap && !imgWrap.querySelector('.property-ref-badge')) {
+            const badge = document.createElement('span');
+            badge.className = 'property-ref-badge';
+            badge.textContent = id;
+            imgWrap.appendChild(badge);
+        }
+
+        const viewLink = card.querySelector('.property-view-btn');
+        if (viewLink) {
+            viewLink.href = `property-detail.html?id=${id}`;
+        }
     });
+
+    if (document.querySelector('.detail-title')) {
+        const params = new URLSearchParams(window.location.search);
+        const propId = params.get('id') || 'NF-2024-001';
+        const p = PROPERTIES[propId] || PROPERTIES['NF-2024-001'];
+
+        document.title = `${p.title} — ${p.location} | NestFinder`;
+
+        const crumb = document.querySelector('.breadcrumb-current');
+        if (crumb) crumb.textContent = p.title;
+
+        const mainImg = document.getElementById('main-gallery-image');
+        if (mainImg) {
+            mainImg.src = `https://images.unsplash.com/${p.image}?auto=format&fit=crop&w=1400&q=80`;
+            mainImg.alt = p.title;
+        }
+
+        const detailTitle = document.querySelector('.detail-title');
+        if (detailTitle) detailTitle.textContent = p.title;
+
+        const locEl = document.querySelector('.detail-location');
+        if (locEl) {
+            const svg = locEl.querySelector('svg');
+            locEl.textContent = ' ' + p.location;
+            if (svg) locEl.insertBefore(svg, locEl.firstChild);
+        }
+
+        const priceEl = document.querySelector('.detail-price');
+        if (priceEl) priceEl.textContent = p.priceFull;
+
+        const statStrongs = document.querySelectorAll('.detail-stat strong');
+        const statSpans = document.querySelectorAll('.detail-stat span');
+        if (statStrongs.length >= 3) {
+            statStrongs[0].textContent = p.beds;
+            statStrongs[1].textContent = p.baths;
+            statStrongs[2].textContent = p.areaNum;
+            if (statSpans[2]) statSpans[2].textContent = p.areaLabel;
+        }
+
+        const galleryBadge = document.querySelector('.gallery-badges .badge');
+        if (galleryBadge) {
+            galleryBadge.textContent = p.badge;
+            galleryBadge.className = `badge ${p.badgeClass}`;
+        }
+
+        const summaryDds = document.querySelectorAll('.summary-list dd');
+        if (summaryDds.length >= 6) {
+            summaryDds[0].textContent = p.price;
+            summaryDds[1].textContent = `${p.type} · ${p.purpose}`;
+            summaryDds[2].textContent = p.areaFull;
+            summaryDds[3].textContent = p.purpose;
+            summaryDds[5].textContent = propId;
+        }
+    }
 
 
     const header = document.querySelector('.nav-header');

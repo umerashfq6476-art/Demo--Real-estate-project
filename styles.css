@@ -1689,9 +1689,6 @@ body.menu-open {
 .filter-bar {
     background-color: var(--bg-primary);
     box-shadow: 0 6px 24px rgba(15, 25, 35, 0.06);
-    position: sticky;
-    top: 76px;
-    z-index: 30;
     border-bottom: 1px solid var(--border);
 }
 
@@ -1892,8 +1889,6 @@ body.menu-open {
     padding: 1.75rem;
     border: 1px solid var(--border);
     align-self: start;
-    position: sticky;
-    top: calc(76px + 220px);
 }
 
 @media (min-width: 1024px) {
