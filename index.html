@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NestFinder | Premium Real Estate in Islamabad & Lahore</title>
+    <meta name="description" content="NestFinder connects buyers, sellers, and renters with premium properties across Islamabad and Lahore. Expert agents, verified listings, trusted service.">
+
+    <meta property="og:title" content="NestFinder | Premium Real Estate in Islamabad & Lahore">
+    <meta property="og:description" content="NestFinder connects buyers, sellers, and renters with premium properties across Islamabad and Lahore. Expert agents, verified listings, trusted service.">
+    <meta property="og:url" content="https://nestfinder-demo.vercel.app/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NestFinder | Premium Real Estate in Islamabad & Lahore">
+    <meta name="twitter:description" content="NestFinder connects buyers, sellers, and renters with premium properties across Islamabad and Lahore. Expert agents, verified listings, trusted service.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80">
+
+    <link rel="canonical" href="https://nestfinder-demo.vercel.app/">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="nav-header sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between gap-6" aria-label="Primary navigation">
+            <a href="index.html" class="nav-logo text-2xl">
+                <span class="nav-logo-nest">Nest</span><span class="nav-logo-finder">Finder</span>
+            </a>
+
+            <ul class="hidden lg:flex items-center gap-10">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="properties.html" class="nav-link">Properties</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="contact.html" class="btn-outline">List Your Property</a>
+                <a href="properties.html" class="btn-gold">Find a Home</a>
+            </div>
+
+            <button class="lg:hidden nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                    <line x1="4" y1="7" x2="20" y2="7"/>
+                    <line x1="4" y1="12" x2="20" y2="12"/>
+                    <line x1="4" y1="17" x2="20" y2="17"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <div class="nav-mobile-overlay" aria-hidden="true"></div>
+
+    <aside id="mobile-menu" class="nav-mobile-panel" aria-hidden="true" aria-label="Mobile navigation">
+        <button class="mobile-close" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                <line x1="6" y1="6" x2="18" y2="18"/>
+                <line x1="18" y1="6" x2="6" y2="18"/>
+            </svg>
+        </button>
+        <a href="index.html" class="nav-logo text-2xl mb-10 mt-2 inline-block">
+            <span class="nav-logo-nest">Nest</span><span class="nav-logo-finder">Finder</span>
+        </a>
+        <ul class="mb-10">
+            <li><a href="index.html" class="mobile-link active">Home</a></li>
+            <li><a href="properties.html" class="mobile-link">Properties</a></li>
+            <li><a href="about.html" class="mobile-link">About</a></li>
+            <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        </ul>
+        <div class="flex flex-col gap-3 mt-auto">
+            <a href="contact.html" class="btn-outline text-center">List Your Property</a>
+            <a href="properties.html" class="btn-gold text-center">Find a Home</a>
+        </div>
+    </aside>
+
+    <main>
+        <section id="hero" aria-label="Hero" class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="hero-left-inner">
+                        <span class="hero-label">TRUSTED SINCE 2012</span>
+                        <h1 class="hero-heading">Find Your Perfect Property in Pakistan</h1>
+                        <p class="hero-subtext">From luxury apartments in DHA to commercial plots in Blue Area &mdash; NestFinder connects you with verified properties and expert agents.</p>
+
+                        <div class="hero-cta">
+                            <a href="properties.html" class="btn-gold hero-btn">Browse Properties</a>
+                            <a href="contact.html" class="btn-white-outline hero-btn">Get Free Valuation</a>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="hero-stat-num">1,200+</div>
+                                <div class="hero-stat-label">Properties</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-num">15+</div>
+                                <div class="hero-stat-label">Years</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-num">3,500+</div>
+                                <div class="hero-stat-label">Happy Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80" alt="Luxury villa exterior" loading="eager">
+                    <div class="hero-floating-card">
+                        <span class="hero-card-badge">New Listing</span>
+                        <div class="hero-card-title">F-7 Luxury Villa, Islamabad</div>
+                        <div class="hero-card-price">PKR 8.5 Crore</div>
+                        <a href="property-detail.html" class="hero-card-btn">View</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="search" aria-label="Property search" class="search-section">
+            <div class="search-wrapper">
+                <div class="search-card">
+                    <div class="search-tabs" role="tablist">
+                        <button class="search-tab active" data-tab="buy" role="tab" type="button">Buy</button>
+                        <button class="search-tab" data-tab="rent" role="tab" type="button">Rent</button>
+                        <button class="search-tab" data-tab="commercial" role="tab" type="button">Commercial</button>
+                    </div>
+
+                    <form class="search-fields" onsubmit="event.preventDefault();">
+                        <div class="search-field">
+                            <label for="search-location">Location</label>
+                            <input id="search-location" type="text" placeholder="City or area">
+                        </div>
+
+                        <div class="search-field">
+                            <label for="search-type">Type</label>
+                            <select id="search-type">
+                                <option>House</option>
+                                <option>Apartment</option>
+                                <option>Plot</option>
+                                <option>Commercial</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field">
+                            <label for="search-budget">Budget</label>
+                            <select id="search-budget">
+                                <option>Any budget</option>
+                                <option>Under PKR 50 Lakh</option>
+                                <option>PKR 50 Lakh &ndash; 1 Crore</option>
+                                <option>PKR 1 &ndash; 3 Crore</option>
+                                <option>PKR 3 &ndash; 5 Crore</option>
+                                <option>PKR 5 &ndash; 10 Crore</option>
+                                <option>Above PKR 10 Crore</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field">
+                            <label for="search-beds">Bedrooms</label>
+                            <select id="search-beds">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5+</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-gold search-submit">Search Properties</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-properties" aria-label="Featured properties" class="featured-section">
+            <div class="featured-wrapper">
+                <div class="featured-heading">
+                    <span class="section-label">HANDPICKED FOR YOU</span>
+                    <h2 class="section-title">Featured Properties</h2>
+                    <p class="section-subtitle">A curated selection of premium homes, plots, and commercial spaces across Islamabad and Lahore.</p>
+                </div>
+
+                <div class="filter-tabs" role="tablist">
+                    <button class="filter-tab active" data-filter="all" type="button">All</button>
+                    <button class="filter-tab" data-filter="sale" type="button">For Sale</button>
+                    <button class="filter-tab" data-filter="rent" type="button">For Rent</button>
+                    <button class="filter-tab" data-filter="commercial" type="button">Commercial</button>
+                    <button class="filter-tab" data-filter="new-launch" type="button">New Launch</button>
+                </div>
+
+                <div class="property-grid">
+
+                    <article class="property-card" data-category="sale">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80" alt="Executive Villa with Pool in F-7 Islamabad" loading="lazy">
+                            <div class="property-badges">
+                                <span class="badge badge-sale">For Sale</span>
+                                <span class="badge badge-featured">Featured</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Add to favorites" type="button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-meta">House &middot; F-7, Islamabad</div>
+                            <h3 class="property-title">Executive Villa with Pool</h3>
+                            <div class="property-price">PKR 8.5 Crore</div>
+                            <div class="property-specs">
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18v-6h18v6M3 18v2M21 18v2M7 12V9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v3"/></svg> 4 Beds</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 12h16v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-4zM6 12V6a2 2 0 0 1 2-2h2v3M6 19v2M18 19v2"/></svg> 3 Baths</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h6M3 15h6M9 3v6M15 3v6"/></svg> 500 sq yd</span>
+                            </div>
+                            <div class="property-divider"></div>
+                            <div class="property-footer">
+                                <div class="property-agent">
+                                    <div class="agent-avatar" style="background:#1a2f4a;">AK</div>
+                                    <span class="agent-name">Ahmed Khan</span>
+                                </div>
+                                <a href="property-detail.html" class="property-view-btn">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card" data-category="sale">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80" alt="Modern Apartment in DHA Lahore" loading="lazy">
+                            <div class="property-badges">
+                                <span class="badge badge-sale">For Sale</span>
+                                <span class="badge badge-new">New</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Add to favorites" type="button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-meta">Apartment &middot; DHA, Lahore</div>
+                            <h3 class="property-title">Modern Apartment Residence</h3>
+                            <div class="property-price">PKR 1.8 Crore</div>
+                            <div class="property-specs">
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18v-6h18v6M3 18v2M21 18v2M7 12V9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v3"/></svg> 3 Beds</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 12h16v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-4zM6 12V6a2 2 0 0 1 2-2h2v3M6 19v2M18 19v2"/></svg> 2 Baths</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h6M3 15h6M9 3v6M15 3v6"/></svg> 2,200 sqft</span>
+                            </div>
+                            <div class="property-divider"></div>
+                            <div class="property-footer">
+                                <div class="property-agent">
+                                    <div class="agent-avatar" style="background:#b8962e;">SM</div>
+                                    <span class="agent-name">Sarah Malik</span>
+                                </div>
+                                <a href="property-detail.html" class="property-view-btn">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card" data-category="commercial">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=900&q=80" alt="Commercial Plaza in Blue Area Islamabad" loading="lazy">
+                            <div class="property-badges">
+                                <span class="badge badge-commercial">Commercial</span>
+                                <span class="badge badge-featured">Featured</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Add to favorites" type="button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-meta">Plaza &middot; Blue Area, Islamabad</div>
+                            <h3 class="property-title">Corporate Plaza Tower</h3>
+                            <div class="property-price">PKR 12 Crore</div>
+                            <div class="property-specs">
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="2" width="16" height="20"/><path d="M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2M9 18h6"/></svg> 8 Floors</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h6M3 15h6M9 3v6M15 3v6"/></svg> 15,000 sqft</span>
+                            </div>
+                            <div class="property-divider"></div>
+                            <div class="property-footer">
+                                <div class="property-agent">
+                                    <div class="agent-avatar" style="background:#1a2f4a;">FA</div>
+                                    <span class="agent-name">Faisal Ahmed</span>
+                                </div>
+                                <a href="property-detail.html" class="property-view-btn">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card" data-category="rent">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Luxury Penthouse in Gulberg Lahore" loading="lazy">
+                            <div class="property-badges">
+                                <span class="badge badge-rent">For Rent</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Add to favorites" type="button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-meta">Penthouse &middot; Gulberg, Lahore</div>
+                            <h3 class="property-title">Luxury Penthouse Suite</h3>
+                            <div class="property-price">PKR 85,000<span class="price-period">/month</span></div>
+                            <div class="property-specs">
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18v-6h18v6M3 18v2M21 18v2M7 12V9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v3"/></svg> 3 Beds</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 12h16v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-4zM6 12V6a2 2 0 0 1 2-2h2v3M6 19v2M18 19v2"/></svg> 3 Baths</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h6M3 15h6M9 3v6M15 3v6"/></svg> 3,500 sqft</span>
+                            </div>
+                            <div class="property-divider"></div>
+                            <div class="property-footer">
+                                <div class="property-agent">
+                                    <div class="agent-avatar" style="background:#b8962e;">ZH</div>
+                                    <span class="agent-name">Zara Hussain</span>
+                                </div>
+                                <a href="property-detail.html" class="property-view-btn">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card" data-category="sale new-launch">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Residential Plot in Bahria Town Islamabad" loading="lazy">
+                            <div class="property-badges">
+                                <span class="badge badge-sale">For Sale</span>
+                                <span class="badge badge-new">New Launch</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Add to favorites" type="button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-meta">Plot &middot; Bahria Town, Islamabad</div>
+                            <h3 class="property-title">Residential Corner Plot</h3>
+                            <div class="property-price">PKR 3.2 Crore</div>
+                            <div class="property-specs">
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h6M3 15h6M9 3v6M15 3v6"/></svg> 10 Marla</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Corner Plot</span>
+                            </div>
+                            <div class="property-divider"></div>
+                            <div class="property-footer">
+                                <div class="property-agent">
+                                    <div class="agent-avatar" style="background:#1a2f4a;">BT</div>
+                                    <span class="agent-name">Bilal Tariq</span>
+                                </div>
+                                <a href="property-detail.html" class="property-view-btn">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="property-card" data-category="sale">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80" alt="Family Home in G-13 Islamabad" loading="lazy">
+                            <div class="property-badges">
+                                <span class="badge badge-sale">For Sale</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Add to favorites" type="button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-meta">House &middot; G-13, Islamabad</div>
+                            <h3 class="property-title">Spacious Family Estate</h3>
+                            <div class="property-price">PKR 4.5 Crore</div>
+                            <div class="property-specs">
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18v-6h18v6M3 18v2M21 18v2M7 12V9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v3"/></svg> 5 Beds</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 12h16v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-4zM6 12V6a2 2 0 0 1 2-2h2v3M6 19v2M18 19v2"/></svg> 4 Baths</span>
+                                <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h6M3 15h6M9 3v6M15 3v6"/></svg> 1 Kanal</span>
+                            </div>
+                            <div class="property-divider"></div>
+                            <div class="property-footer">
+                                <div class="property-agent">
+                                    <div class="agent-avatar" style="background:#b8962e;">AR</div>
+                                    <span class="agent-name">Aisha Rahman</span>
+                                </div>
+                                <a href="property-detail.html" class="property-view-btn">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="featured-cta">
+                    <a href="properties.html" class="btn-gold view-all-btn">View All Properties</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" aria-label="Company stats" class="stats-section">
+            <div class="stats-wrapper">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1200" data-suffix="+">0</div>
+                    <div class="stat-label">Properties Listed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="3500" data-suffix="+">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15" data-suffix="+">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98" data-suffix="%">0</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" aria-label="Our services" class="services-section">
+            <div class="services-wrapper">
+                <div class="featured-heading">
+                    <span class="section-label">OUR SERVICES</span>
+                    <h2 class="section-title">What We Offer</h2>
+                    <p class="section-subtitle">From buying your first home to selling your investment portfolio &mdash; our experts are with you at every step.</p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+                        </div>
+                        <h3 class="service-title">Buy Property</h3>
+                        <p class="service-desc">Helping buyers find verified properties at the best prices across Islamabad and Lahore.</p>
+                        <a href="properties.html" class="service-link">Learn More <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2"/></svg>
+                        </div>
+                        <h3 class="service-title">Sell Property</h3>
+                        <p class="service-desc">Market your property to thousands of qualified buyers with our premium marketing tools.</p>
+                        <a href="contact.html" class="service-link">Learn More <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M16 3v4M8 3v4M3 11h18"/><path d="M9 15h2M13 15h2M9 18h2"/></svg>
+                        </div>
+                        <h3 class="service-title">Rent &amp; Lease</h3>
+                        <p class="service-desc">Short and long term rental solutions for residential and commercial properties across Pakistan.</p>
+                        <a href="properties.html" class="service-link">Learn More <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16v-4M12 16v-8M17 16v-6"/><circle cx="7" cy="9" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="17" cy="7" r="1"/></svg>
+                        </div>
+                        <h3 class="service-title">Property Valuation</h3>
+                        <p class="service-desc">Free market valuation by certified experts &mdash; know exactly what your property is worth today.</p>
+                        <a href="contact.html" class="service-link">Learn More <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" aria-label="Client testimonials" class="testimonials-section">
+            <div class="testimonials-wrapper">
+                <div class="featured-heading">
+                    <span class="section-label">CLIENT STORIES</span>
+                    <h2 class="section-title">What Our Clients Say</h2>
+                    <p class="section-subtitle">Real people, real stories &mdash; trusted by families, investors, and overseas Pakistanis.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">NestFinder found us our dream home in F-7 within 3 weeks. The agent was professional, honest, and knew the market perfectly.</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Hamza &amp; Sara Qureshi</div>
+                            <div class="author-location">Islamabad</div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">Sold my DHA property at 12% above asking price. NestFinder's marketing and negotiation skills are unmatched.</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Tariq Mahmood</div>
+                            <div class="author-location">Lahore</div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">As an overseas Pakistani, I was nervous about buying remotely. NestFinder handled everything &mdash; paperwork, inspection, transfer &mdash; with zero issues.</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Asim Baig</div>
+                            <div class="author-location">UK-based buyer</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" aria-label="Call to action" class="cta-section">
+            <div class="cta-pattern" aria-hidden="true"></div>
+            <div class="cta-wrapper">
+                <h2 class="cta-heading">Ready to Find Your Dream Property?</h2>
+                <p class="cta-subtext">Talk to one of our expert agents today. Free consultation, no obligation.</p>
+                <div class="cta-buttons">
+                    <a href="properties.html" class="btn-gold cta-btn">Browse Properties</a>
+                    <a href="tel:+923170552359" class="btn-white-outline cta-btn">Call Us Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top-line"></div>
+        <div class="footer-wrapper">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-nest">Nest</span><span class="footer-logo-finder">Finder</span>
+                    </a>
+                    <div class="footer-tagline">Find Where You Belong</div>
+                    <p class="footer-desc">Pakistan's premium real estate agency &mdash; verified listings, expert agents, and trusted service across Islamabad and Lahore.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                    </div>
+                    <div class="footer-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        RERA Registered Agency
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html">Free Valuation</a></li>
+                        <li><a href="contact.html">List Property</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Property Types</h4>
+                    <ul class="footer-links">
+                        <li><a href="properties.html">Houses &amp; Villas</a></li>
+                        <li><a href="properties.html">Apartments</a></li>
+                        <li><a href="properties.html">Plots &amp; Land</a></li>
+                        <li><a href="properties.html">Commercial</a></li>
+                        <li><a href="properties.html">New Projects</a></li>
+                        <li><a href="properties.html">Overseas Buyers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Office 14, Centaurus Mall, Islamabad 44000</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.91.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+923170552359">+92 317 0552359</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@nestfinder.pk">info@nestfinder.pk</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Mon&ndash;Sat: 9 AM &ndash; 6 PM</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/923170552359" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.82c-1.83 0-3.62-.49-5.18-1.42l-.37-.22-3.67.96.98-3.58-.24-.37A9.84 9.84 0 0 1 2.18 12C2.18 6.59 6.59 2.18 12 2.18s9.82 4.41 9.82 9.82-4.41 9.82-9.82 9.82zm5.4-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NestFinder. All rights reserved. Crafted by Umer.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923170552359" class="whatsapp-float" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.82c-1.83 0-3.62-.49-5.18-1.42l-.37-.22-3.67.96.98-3.58-.24-.37A9.84 9.84 0 0 1 2.18 12C2.18 6.59 6.59 2.18 12 2.18s9.82 4.41 9.82 9.82-4.41 9.82-9.82 9.82zm5.4-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+    </a>
+
+    <button class="scroll-top" aria-label="Scroll to top" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
